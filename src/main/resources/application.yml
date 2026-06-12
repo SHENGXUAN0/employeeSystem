@@ -1,0 +1,18 @@
+server:
+  #服务器设置
+  port: 8080
+spring:
+  #  数据源配置（连接数据库）
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Tokyo
+    ##    employee_system是数据库名字，userUnicode-code是编码
+    ##    characterEncoding是传输编码，serverTimezone是时区
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #    mapper,xml文件位置
+  type-aliases-package: org.example.employeesystem.entity
+#  实体类包的位置
+

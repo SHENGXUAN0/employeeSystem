@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>员工管理系统</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/js/index.js"></script>
+<body>
+
+<div class="header">
+    <h2>员工管理系统</h2>
+
+    <div>
+        <span id="count"></span>
+        <button class="logout-btn" onclick="logout()">退出</button>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        姓名搜索：
+        <input id="searchName" placeholder="请输入姓名">
+
+        <button class="search-btn" onclick="searchEmp()">搜索</button>
+        <button class="refresh-btn" onclick="refreshEmp()">刷新</button>
+        <button class="add-btn" onclick="addEmp()">新增员工</button>
+    </div>
+
+    <div class="card">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>电话</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody id="empTable">
+
+            </tbody>
+        </table>
+
+        <div class="page-box">
+            <button onclick="prevPage()">上一页</button>
+            <span>第<span id="pageNum">1</span>页</span>
+            <button onclick="nextPage()">下一页</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

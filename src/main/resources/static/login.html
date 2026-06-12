@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>员工管理系统 - 登录</title>
+
+    <link rel="stylesheet" href="/css/login.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/js/login.js"></script>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="left">
+        <h1>员工管理系统</h1>
+
+        <p>
+            用于管理员工信息、部门信息以及基础数据维护。
+            <br>
+            支持员工查询、新增、修改、删除和分页管理。
+        </p>
+    </div>
+
+    <div class="right">
+
+        <h2>用户登录</h2>
+
+        <input
+                id="username"
+                class="input-box"
+                type="text"
+                placeholder="请输入用户名">
+
+        <input
+                id="password"
+                class="input-box"
+                type="password"
+                placeholder="请输入密码">
+
+        <button
+                class="login-btn"
+                onclick="login()">
+
+            登录
+
+        </button>
+
+        <div class="register-link">
+
+            还没有账号？
+
+            <span onclick="toRegister()">
+
+                立即注册
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

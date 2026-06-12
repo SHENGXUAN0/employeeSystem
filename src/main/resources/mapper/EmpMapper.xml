@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.employeesystem.mapper.EmpMapper">
+
+    <select id="selectAll" resultType="org.example.employeesystem.entity.Emp">
+        select
+        e.id,
+        e.name,
+        e.gender,
+        e.age,
+        e.phone,
+        e.salary,
+        e.entrydate as entryDate,
+        e.create_time as createTime,
+        e.update_time as updateTime,
+        e.dept_id as deptId,
+        d.name as deptName
+        from emp e
+        left join dept d on e.dept_id = d.id
+    </select>
+
+    <select id="selectById" resultType="org.example.employeesystem.entity.Emp">
+        select
+        e.id,
+        e.name,
+        e.gender,
+        e.age,
+        e.phone,
+        e.salary,
+        e.entrydate as entryDate,
+        e.create_time as createTime,
+        e.update_time as updateTime,
+        e.dept_id as deptId,
+        d.name as deptName
+        from emp e
+        left join dept d on e.dept_id = d.id
+        where e.id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="org.example.employeesystem.entity.Emp">
+        insert into emp(
+        name,
+        gender,
+        age,
+        phone,
+        salary,
+        entrydate,
+        dept_id,
+        create_time,
+        update_time )
+        values(
+        #{name},
+        #{gender},
+        #{age},
+        #{phone},
+        #{salary},
+        #{entryDate},
+        #{deptId},
+        now(),
+        now()
+        )
+    </insert>
+
+    <update id="update" parameterType="org.example.employeesystem.entity.Emp">
+        update emp
+        set
+        name = #{name},
+        gender = #{gender},
+        age = #{age},
+        phone = #{phone},
+        salary = #{salary},
+        entrydate = #{entryDate},
+        dept_id = #{deptId},
+        update_time = now()
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from emp
+        where id = #{id}
+    </delete>
+
+    <select id="selectByName" resultType="org.example.employeesystem.entity.Emp">
+        select
+        e.id,
+        e.name,
+        e.gender,
+        e.age,
+        e.phone,
+        e.salary,
+        e.entrydate as entryDate,
+        e.create_time as createTime,
+        e.update_time as updateTime,
+        e.dept_id as deptId,
+        d.name as deptName
+        from emp e
+        left join dept d on e.dept_id = d.id
+        where e.name like concat('%', #{name}, '%')
+    </select>
+
+    <select id="selectPage" resultType="org.example.employeesystem.entity.Emp">
+        select
+        e.id,
+        e.name,
+        e.gender,
+        e.age,
+        e.phone,
+        e.salary,
+        e.entrydate as entryDate,
+        e.create_time as createTime,
+        e.update_time as updateTime,
+        e.dept_id as deptId,
+        d.name as deptName
+        from emp e
+        left join dept d on e.dept_id = d.id
+        limit #{offset}, #{size}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from emp
+    </select>
+
+</mapper>

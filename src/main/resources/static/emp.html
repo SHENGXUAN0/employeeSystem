@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>员工详细信息</title>
+    <link rel="stylesheet" href="/css/emp.css">
+</head>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/js/emp.js"></script>
+<body>
+
+<div class="header">
+    <h2>员工详细信息</h2>
+
+    <div>
+        <a href="index.html" class="back-btn">返回首页</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <h3>基本信息</h3>
+
+        <div class="info-row">
+            <span>员工ID：</span>
+            <p id="id"></p>
+        </div>
+
+        <div class="info-row">
+            <span>姓名：</span>
+            <p id="name"></p>
+        </div>
+
+        <div class="info-row">
+            <span>性别：</span>
+            <p id="gender"></p>
+        </div>
+
+        <div class="info-row">
+            <span>年龄：</span>
+            <p id="age"></p>
+        </div>
+
+        <div class="info-row">
+            <span>电话：</span>
+            <p id="phone"></p>
+        </div>
+
+        <div class="info-row">
+            <span>工资：</span>
+            <p id="salary"></p>
+        </div>
+
+        <div class="info-row">
+            <span>入职日期：</span>
+            <p id="entryDate"></p>
+        </div>
+
+        <div class="info-row">
+            <span>所属部门：</span>
+            <p id="deptName"></p>
+        </div>
+
+        <div class="info-row">
+            <span>创建时间：</span>
+            <p id="createTime"></p>
+        </div>
+
+        <div class="info-row">
+            <span>更新时间：</span>
+            <p id="updateTime" ></p>
+        </div>
+        <div class="btn-box">
+            <button class="edit-btn" onclick="updateEmp()">修改</button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

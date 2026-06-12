@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>员工管理系统 - 注册</title>
+
+    <link rel="stylesheet" href="/css/register.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/js/register.js"></script>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="left">
+        <h1>员工管理系统</h1>
+
+        <p>
+            创建你的管理员账号，开始进行员工信息和部门数据管理。
+            <br>
+            统一维护企业基础信息，提高管理效率。
+        </p>
+    </div>
+
+    <div class="right">
+
+        <h2>用户注册</h2>
+
+        <input
+                id="username"
+                class="input-box"
+                type="text"
+                placeholder="请输入用户名">
+
+        <input
+                id="password"
+                class="input-box"
+                type="password"
+                placeholder="请输入密码">
+
+        <input
+                id="confirmPassword"
+                class="input-box"
+                type="password"
+                placeholder="请确认密码">
+
+        <button
+                class="register-btn"
+                onclick="register()">
+            注册
+        </button>
+
+        <div class="login-link">
+            已有账号？
+            <span onclick="toLogin()">返回登录</span>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
